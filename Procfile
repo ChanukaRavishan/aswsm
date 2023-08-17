@@ -1,1 +1,1 @@
-web: python mapping.py: server
+web: python mapping.py
