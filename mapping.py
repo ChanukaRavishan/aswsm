@@ -14,11 +14,11 @@ app = Dash(__name__)
 
 
 app.layout = html.Div([
-    html.H4('Choropleth map of Sri Lanka based on ASWSUM data'),
+    html.H4('Choropleth map of Sri Lanka based on 'Aswesuma data'),
     html.P("Poverty category:"),
     dcc.RadioItems(
         id='candidate',
-        options=["Severely Poor", "Poor",  "Transient", "Vulnerable"],
+        options=["Severely Poor", "Poor", "Vulnerable", "Transient"],
         value="Poor",
         inline=True
     ),
@@ -36,7 +36,7 @@ def display_choropleth(candidate):
                    color= candidate,
                    locations=geo_df.index,
                    #featureidkey= geo_df.index,
-                   projection="mercator",range_color=[0, 6500])
+                   projection="mercator",range_color=[0, 13000])
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     return fig
